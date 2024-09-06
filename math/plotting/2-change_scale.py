@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -13,4 +14,7 @@ plt.ylabel("Fraction Remaining")
 plt.title("Exponential Decay of C-14")
 plt.yscale("log")
 plt.xlim(0, 28650)
+plt.savefig(
+    f"plots/{os.path.basename(__file__)[0:-3] + '_plot.png'}"
+)
 plt.show()
