@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -17,4 +18,7 @@ plt.axis([0, 20000, 0, 1])
 plt.plot(x, y1, 'r--', label='C-14')
 plt.plot(x, y2, 'g-', label='Ra-226')
 plt.legend()
+plt.savefig(
+    f"plots/{os.path.basename(__file__)[0:-3] + '_plot.png'}"
+)
 plt.show()
