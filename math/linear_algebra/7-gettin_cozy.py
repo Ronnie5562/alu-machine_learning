@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """_summary_
-Contains a func cat_matrices2D(mat1, mat2, axis=0) that concatenates two matrices
+Contains a func cat_matrices2D() that concatenates two matrices
 """
+
 
 def cat_matrices2D(mat1, mat2, axis=0):
     """_summary_
