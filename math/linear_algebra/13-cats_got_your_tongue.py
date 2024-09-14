@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+"""_summary_
+Contains a function that concatenates matrices on different axis
+"""
 import numpy as np
 
 
