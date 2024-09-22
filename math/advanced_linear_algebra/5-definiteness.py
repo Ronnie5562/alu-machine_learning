@@ -29,7 +29,7 @@ def definiteness(matrix):
     # Ensure the matrix is square (n x n) and is symmetric
     if matrix.ndim != 2 or \
         matrix.shape[0] != matrix.shape[1] or \
-            matrix.shape[0] == 0:
+            np.array_equal(matrix, matrix.T) is False:
         return None
 
     eigenvalues = np.linalg.eigvals(matrix)
@@ -47,7 +47,3 @@ def definiteness(matrix):
     else:
         print("Here")
         return None
-
-
-mat6 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-print(definiteness(mat6))
