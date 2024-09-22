@@ -26,8 +26,10 @@ def definiteness(matrix):
     if not isinstance(matrix, np.ndarray):
         raise TypeError("matrix must be a numpy.ndarray")
 
-    # Ensure the matrix is square (n x n)
-    if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
+    # Ensure the matrix is square (n x n) and is symmetric
+    if matrix.ndim != 2 or \
+        matrix.shape[0] != matrix.shape[1] or \
+            np.array_equal(matrix, matrix.T) is False:
         return None
 
     eigenvalues = np.linalg.eigvals(matrix)
@@ -43,4 +45,9 @@ def definiteness(matrix):
     elif np.any(eigenvalues > 0) and np.any(eigenvalues < 0):
         return "Indefinite"
     else:
+        print("Here")
         return None
+
+
+mat6 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(definiteness(mat6))
