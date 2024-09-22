@@ -30,18 +30,17 @@ def definiteness(matrix):
     if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
         return None
 
-    eigenvalues = list(np.linalg.eigvals(matrix))
-    print(eigenvalues)
+    eigenvalues = np.linalg.eigvals(matrix)
 
-    if all(eigenvalues > 0):
+    if np.all(eigenvalues > 0):
         return "Positive definite"
-    elif all(eigenvalues >= 0):
+    elif np.all(eigenvalues >= 0):
         return "Positive semi-definite"
-    elif all(eigenvalues < 0):
+    elif np.all(eigenvalues < 0):
         return "Negative definite"
-    elif all(eigenvalues <= 0):
+    elif np.all(eigenvalues <= 0):
         return "Negative semi-definite"
-    elif any(eigenvalues > 0) and any(eigenvalues < 0):
+    elif np.any(eigenvalues > 0) and np.any(eigenvalues < 0):
         return "Indefinite"
     else:
         return None
