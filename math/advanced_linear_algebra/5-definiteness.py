@@ -30,7 +30,8 @@ def definiteness(matrix):
     if matrix.ndim != 2 or matrix.shape[0] != matrix.shape[1]:
         return None
 
-    eigenvalues = np.linalg.eigvals(matrix)
+    eigenvalues = list(np.linalg.eigvals(matrix))
+    print(eigenvalues)
 
     if all(eigenvalues > 0):
         return "Positive definite"
