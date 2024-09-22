@@ -73,7 +73,7 @@ def minor(matrix):
 
     # Handle 0x0 matrix
     if (len(matrix) == 1 and len(matrix[0]) == 0):
-        return 1
+        raise ValueError('matrix must be a non-empty square matrix')
 
     # Check if the matrix is square
     if not all(len(row) == len(matrix) for row in matrix):
@@ -97,7 +97,14 @@ def minor(matrix):
 
 
 def cofactor(matrix):
-    # Convert the minors to cofactors
+    """_summary_
+
+    Args:
+        matrix (list of lists): The matrix to compute its cofactor.
+
+    Returns:
+        matrix: The cofactor matrix
+    """
     minors = minor(matrix)
     for row in range(len(minors)):
         for col in range(len(minors[row])):
@@ -107,6 +114,14 @@ def cofactor(matrix):
 
 
 def adjugate(matrix):
+    """_summary_
+
+    Args:
+        matrix (_type_): The matrix to compute its adjugate.
+
+    Returns:
+        matrix: The adjugate matrix
+    """
     cofactor_matrix = cofactor(matrix)
     adjugate_matrix = [
         [0 for _ in range(len(matrix))] for _ in range(len(matrix[0]))
