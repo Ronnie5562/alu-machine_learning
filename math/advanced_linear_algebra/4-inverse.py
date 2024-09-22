@@ -149,12 +149,10 @@ def inverse(matrix):
     if det == 0:
         return None
 
-    det_inv = 1 / det
-
     adjugate_matrix = adjugate(matrix)
 
     # Compute the inverse of the matrix
     for row in adjugate_matrix:
-        row[:] = map(lambda col: col * det_inv, row)
+        row[:] = map(lambda col: col / det, row)
 
     return adjugate_matrix
