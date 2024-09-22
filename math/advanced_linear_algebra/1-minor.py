@@ -73,7 +73,7 @@ def minor(matrix):
 
     # Handle 0x0 matrix
     if (len(matrix) == 1 and len(matrix[0]) == 0):
-        return 1
+        raise ValueError('matrix must be a non-empty square matrix')
 
     # Check if the matrix is square
     if not all(len(row) == len(matrix) for row in matrix):
