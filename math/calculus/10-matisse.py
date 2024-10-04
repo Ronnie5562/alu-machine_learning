@@ -9,18 +9,17 @@ def poly_derivative(poly):
     Computes the coefficients of the terms in the
     derivative of a function using Sum rule
     """
-    if not isinstance(poly, list):
+    if not isinstance(poly, list) or not poly:
         return None
     if not all(isinstance(c, (int, float)) for c in poly):
         return None
-
-    if len(poly) <= 1:
+    if len(poly) == 1:
         return [0]
 
     derivatives = []
-    for term in enumerate(poly):
-        if term[0] == 0:
+    for power, coefficient in enumerate(poly):
+        if power == 0:
             continue
-        derivatives.append(term[0] * term[1])
+        derivatives.append(power * coefficient)
 
     return derivatives
