@@ -9,7 +9,10 @@ def poly_derivative(poly):
     Computes the coefficients of the terms in the
     derivative of a function using Sum rule
     """
-    if not isinstance(poly, list) or len(poly) <= 1:
+    if not isinstance(poly, list):
+        return None
+
+    if len(poly) <= 1:
         return [0]
 
     derivatives = []
