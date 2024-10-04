@@ -9,14 +9,19 @@ def poly_integral(poly, C=0):
     Computes the coefficients of the terms in the
     integral of a function using Sum rule
     """
-    if not isinstance(poly, list) or not isinstance(C, int):
+    if not isinstance(poly, list) or not isinstance(C, (int, float)):
+        return None
+    if not all(isinstance(c, (int, float)) for c in poly):
         return None
 
     integrals = [C]
-    for term in enumerate(poly):
-        if term[0] == 0:
-            integrals.append(term[1])
+    for power, coefficient in enumerate(poly):
+        if power == 0:
+            integrals.append(coefficient)
         else:
-            integrals.append(term[1] / (term[0] + 1))
+            integral = coefficient / (power + 1)
+            integrals.append(
+                int(integral) if integral.is_integer() else integral
+            )
 
     return integrals
