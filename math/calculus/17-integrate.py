@@ -9,7 +9,7 @@ def poly_integral(poly, C=0):
     Computes the coefficients of the terms in the
     integral of a function using Sum rule
     """
-    if not isinstance(poly, list) or not isinstance(C, (int, float)) or not poly: # noqa
+    if not isinstance(poly, list) or not isinstance(C, (int, float)) or not poly:  # noqa
         return None
     if not all(isinstance(c, (int, float)) for c in poly):
         return None
