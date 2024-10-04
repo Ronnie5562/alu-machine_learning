@@ -8,7 +8,7 @@ def summation_i_squared(n):
     """_summary_
     A recursive function that computes the result a sigma notation.
     """
-    if not int(n):
+    if not isinstance(n, int) or n < 1:
         return None
     if n == 1:
         return 1
