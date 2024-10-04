@@ -6,11 +6,16 @@ This file contains the implementation of summation_i_squared
 
 def summation_i_squared(n):
     """_summary_
-    A recursive function that computes the result a sigma notation.
+    A function that computes the result a sigma notation.
     """
     if not isinstance(n, int) or n < 1:
         return None
-    if n == 1:
-        return 1
 
-    return n**2 + summation_i_squared(n-1)
+    # Using the mathematical formular to computes the sum of squares
+    return n * (n + 1) * (2 * n + 1) // 6
+
+    # Recursive approach (Not suitable for large inputs)
+    # if n == 1:
+    #     return 1
+
+    # return n**2 + summation_i_squared(n-1)
