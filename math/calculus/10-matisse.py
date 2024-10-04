@@ -11,6 +11,8 @@ def poly_derivative(poly):
     """
     if not isinstance(poly, list):
         return None
+    if not all(isinstance(c, (int, float)) for c in poly):
+        return None
 
     if len(poly) <= 1:
         return [0]
