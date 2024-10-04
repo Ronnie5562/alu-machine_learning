@@ -14,7 +14,7 @@ def summation_i_squared(n):
     # Using the mathematical formular to computes the sum of squares
     return n * (n + 1) * (2 * n + 1) // 6
 
-    # Recursive approach (Not suitable for large inputs)
+    # Recursive approach (Not suitable when n is large)
     # if n == 1:
     #     return 1
 
