@@ -23,5 +23,6 @@ def poly_integral(poly, C=0):
             integrals.append(
                 int(integral) if integral.is_integer() else integral
             )
-
+    while integrals[-1] == 0 and len(integrals) > 1:
+        integrals.pop()
     return integrals
